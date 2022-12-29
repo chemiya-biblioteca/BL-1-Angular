@@ -1,0 +1,6 @@
+Ng new proyecto
+Ng serve
+Localhost:4200
+Ng generate component compo
+Ng generate service servi
+ng add @angular/material
