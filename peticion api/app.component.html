@@ -1,9 +1,9 @@
-<div *ngIf="articulos!=null; else espera">
+<div *ngIf="articulos!=null; else espera"><!--si no hay datos muestro template de espera-->
   <table border="1">
     <tr>
       <td>Codigo</td><td>Descripcion</td><td>Precio</td>
     </tr>
-    <tr *ngFor="let art of articulos">
+    <tr *ngFor="let art of articulos"><!--por cada del array pongo sus valores-->
       <td>{{art.codigo}}</td>
       <td>{{art.descripcion}}</td>
       <td>{{art.precio}}</td>

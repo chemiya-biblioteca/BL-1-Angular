@@ -1,31 +1,33 @@
+<!--creamos formulario y onsubmit-->
 <form [formGroup]="formularioContacto" (ngSubmit)="submit()">
   <p>Nombre:
     <input type="text" formControlName="nombre" required>
     <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']">
-      (El nombre no puede quedar vacío)
+      (El nombre no puede quedar vacío)<!--si hay error en el nombre por ser requerido, lo mostramos-->
     </span>
     <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['minlength']">
-      (Debe tener como mínimo 10 caracteres)
+      (Debe tener como mínimo 10 caracteres)<!--si hay error en el nombre por longitud, lo mostramos-->
     </span>
   </p>
   <p>Mail:
     <input type="text" formControlName="mail">
     <span *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">
-      (El mail no puede quedar vacío)
+      (El mail no puede quedar vacío)<!--si hay error en el email por ser requerido, lo mostramos-->
     </span>
     <span *ngIf="this.formularioContacto.get('mail')?.errors?.['email']">
-      (El mail no es válido)
+      (El mail no es válido)<!--si hay error en el email por formato, lo mostramos-->
     </span>
   </p>
   <p>Mensaje<br>
     <textarea rows="10" cols="70" formControlName="mensaje"></textarea>
   </p>
   <div *ngIf="this.formularioContacto.get('mensaje')?.errors?.['required']">
-    (El mensaje no puede quedar vacío)
+    (El mensaje no puede quedar vacío)<!--si hay error en el mensaje por ser requerido, lo mostramos-->
   </div>
   <div *ngIf="this.formularioContacto.get('mensaje')?.errors?.['maxlength']">
-    (Debe tener como máximo 500 caracteres)
+    (Debe tener como máximo 500 caracteres)<!--si hay error en el mensaje por longitud, lo mostramos-->
   </div>
   <button type="submit">Confirmar</button>
 </form>
+<!--enlazamos atributo resultado-->
 <div>{{resultado}}</div>

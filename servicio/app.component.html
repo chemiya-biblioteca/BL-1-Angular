@@ -1,13 +1,13 @@
-<div *ngIf="articulos!=null; else espera">
+<div *ngIf="articulos!=null; else espera"><!--si no hay articulos-->
   <table border="1">
     <tr>
       <td>Codigo</td><td>Descripcion</td><td>Precio</td>
     </tr>
-    <tr *ngFor="let art of articulos">
+    <tr *ngFor="let art of articulos"><!--muestro del array los atributos de cada valor-->
       <td>{{art.codigo}}</td>
       <td>{{art.descripcion}}</td>
       <td>{{art.precio}}</td>
     </tr>
   </table>
 </div>
-<ng-template #espera>Esperando datos...</ng-template>
+<ng-template #espera>Esperando datos...</ng-template><!--template para sin datos-->

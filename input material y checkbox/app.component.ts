@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //variables que ponemos con el html
   valor1!:number;
   valor2!:number;
   resultado!:string;
@@ -16,11 +17,12 @@ export class AppComponent {
   opcion3=false;
   opcion4=false;
 
+
   operar() {
     this.resultado='';
-    if (this.opcion1) {
-      let ope = this.valor1 + this.valor2;
-      this.resultado+=`La suma es ${ope} `;
+    if (this.opcion1) {//segun el checkbox marcado
+      let ope = this.valor1 + this.valor2;//hacemos calculos con las variables
+      this.resultado+=`La suma es ${ope} `;//guardamos resultado de la variable
     }
     if (this.opcion2) {
       let ope = this.valor1 - this.valor2;

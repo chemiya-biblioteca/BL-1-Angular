@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //variables para enlazar
   valor1!:number;
   valor2!:number;
   resultado!:number;
 
+  //tipos de operaciones
   operacionSeleccionada: string = 'suma';
   tipoOperaciones = [
     'suma',
@@ -21,8 +23,8 @@ export class AppComponent {
   ];
 
   operar() {
-    switch (this.operacionSeleccionada) {
-      case 'suma' : this.resultado = this.valor1 + this.valor2;
+    switch (this.operacionSeleccionada) {//segun la operacion seleccionada
+      case 'suma' : this.resultado = this.valor1 + this.valor2;//hacemos operaciones
                     break;
       case 'resta' : this.resultado = this.valor1 - this.valor2;
                      break;

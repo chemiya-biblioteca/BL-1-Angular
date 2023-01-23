@@ -1,0 +1,6 @@
+<span *ngFor="let numero of [2,3,4,5,6,7,8,9,10]" style="margin-right: 2rem;"><!--ngfor para recorrer numeros-->
+  <a routerLink="tabla/{{numero}}">Tabla del {{numero}}</a><!--muestro el numero y en la ruta lo pongo-->
+</span>
+<div>
+  <router-outlet></router-outlet>
+</div>

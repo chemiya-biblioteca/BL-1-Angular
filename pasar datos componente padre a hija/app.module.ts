@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
+import { DadoComponent } from './dado/dado.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    DadoComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

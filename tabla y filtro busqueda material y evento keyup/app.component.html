@@ -1,0 +1,26 @@
+<mat-form-field>
+  <mat-label>Buscar</mat-label><!--evento al pulsar tecla-->
+  <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+</mat-form-field>
+<div class="mat-elevation-z8"><!--enlazo con latabla-->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Código </th><!--una celda y la enlazo con el atributo-->
+      <td mat-cell *matCellDef="let articulo"> {{articulo.codigo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Descripción </th><!--una celda y la enlazo con el atributo-->
+      <td mat-cell *matCellDef="let articulo"> {{articulo.descripcion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th><!--una celda y la enlazo con el atributo-->
+      <td mat-cell *matCellDef="let articulo"> {{articulo.precio}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr><!--en la cabecera pongo los nombres de las columnas-->
+    <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+  </table>
+</div>

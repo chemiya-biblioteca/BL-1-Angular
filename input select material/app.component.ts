@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //vairables con los numeros
   valor1!:number;
   valor2!:number;
   resultado!:number;
 
+  //array con los tipos de operaciones
   operaciones = [
     {valor:'suma', muestraValor:'Sumar'},
     {valor:'resta', muestraValor:'Restar'},
@@ -19,10 +21,11 @@ export class AppComponent {
     {valor:'division', muestraValor:'Dividir'}
   ];
 
+  //ponemos al inicio una
   seleccionada: string = this.operaciones[0].valor;
 
   operar() {
-    switch (this.seleccionada) {
+    switch (this.seleccionada) {//segun la seleccionada hacemos operaciones
       case 'suma' : this.resultado = this.valor1 + this.valor2;
                     break;
       case 'resta' : this.resultado = this.valor1 - this.valor2;

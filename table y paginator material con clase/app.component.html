@@ -1,0 +1,23 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #tabla1><!--enlazo con la tabla-->
+
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Código </th><!--muestro el valor de cada celda del articulo-->
+      <td mat-cell *matCellDef="let articulo"> {{articulo.codigo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Descripción </th><!--muestro el valor de cada celda del articulo-->
+      <td mat-cell *matCellDef="let articulo"> {{articulo.descripcion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th><!--muestro el valor de cada celda del articulo-->
+      <td mat-cell *matCellDef="let articulo"> {{articulo.precio}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr><!--pongo las columnas de caberecera-->
+    <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator><!--pongo el paginador-->
+</div>

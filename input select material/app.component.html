@@ -1,21 +1,22 @@
 <div class="contenedor">
-
-  <mat-form-field>
+<!--field de entrada-->
+  <mat-form-field><!--enlazamos con la variable-->
     <input matInput [(ngModel)]="valor1" type="number" placeholder="Ingrese primer valor">
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field><!--enlazamos con la variable-->
       <input matInput [(ngModel)]="valor2" type="number" placeholder="Ingrese segundo valor">
   </mat-form-field>
   
-  <mat-form-field>
+  <mat-form-field><!--enlazamos con la variable de seleecionada-->
     <mat-select placeholder="Operaciones" [(ngModel)]="seleccionada" name="operacion">
-      <mat-option *ngFor="let op of operaciones" [value]="op.valor">
+      <mat-option *ngFor="let op of operaciones" [value]="op.valor"><!--por cada una del array ponemos valor y texto-->
         {{op.muestraValor}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
+  <!--click de boton y mostrar variable-->
   <button mat-raised-button color="primary" (click)="operar()">Operar</button>
   <p>El resultado es:{{resultado}}</p>
   

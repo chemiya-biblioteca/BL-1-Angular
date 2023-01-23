@@ -8,12 +8,12 @@ import { ArticulosService } from './articulos.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  articulos: any;
+  articulos: any;//array para los valores
 
-  constructor(private articulosService: ArticulosService) {}
+  constructor(private articulosService: ArticulosService) {}//llamo al servicio
 
   ngOnInit() {
-    this.articulosService.retornar()
+    this.articulosService.retornar()//llamo el metodo del servicio y guardo los datos que me da
       .subscribe( result =>  this.articulos = result)
   }
 }
